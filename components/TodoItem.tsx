@@ -25,6 +25,7 @@ function TodoItem({ todo, deleteTodo, toggleTodo }: ITodoItem) {
         </div>
         <div>
           <p
+            datat-testid="todo-item"
             className={`${
               done ? "line-through" : ""
             } text-lg font-light leading-relaxed text-gray-800`}
@@ -33,7 +34,11 @@ function TodoItem({ todo, deleteTodo, toggleTodo }: ITodoItem) {
           </p>
         </div>
         <div className="mr-4">
-          <button type="button" onClick={() => deleteTodo(id)}>
+          <button
+            data-testid="todo-item-button"
+            type="button"
+            onClick={() => deleteTodo(id)}
+          >
             <AiTwotoneDelete className="text-red-500" />
           </button>
         </div>
