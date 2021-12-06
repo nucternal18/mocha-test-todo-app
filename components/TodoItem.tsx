@@ -1,5 +1,5 @@
 import { AiTwotoneDelete } from "react-icons/ai";
-import { TodoItemType } from "../pages";
+import { TodoItemType } from "../context/todoContext";
 
 interface ITodoItem {
   deleteTodo: (id: string) => void;
