@@ -4,12 +4,6 @@ import { ActionType, TodoItemType, useTodo } from "../context/todoContext";
 import TodoInput from "./TodoInput";
 import TodoItem from "./TodoItem";
 
-interface ITodo {
-  addTodo: (todo: string) => void;
-  setTodo: (e: string) => void;
-  todo: string;
-}
-
 function Todo() {
   const { state, dispatch } = useTodo();
   const [todo, setTodo] = useState("");
