@@ -50,5 +50,7 @@ module.exports = {
     "@typescript-eslint/ban-types": "off",
     "@next/next/no-img-element": "off",
     "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "testing-library/no-render-in-setup": "off",
   },
 };

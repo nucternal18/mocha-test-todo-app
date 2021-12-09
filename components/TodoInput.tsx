@@ -1,12 +1,17 @@
+import { useState } from "react";
 import { FaPlusCircle } from "react-icons/fa";
 
 interface ITodo {
   addTodo: (todo: string) => void;
-  setTodo: (e: string) => void;
-  todo: string;
 }
 
-function TodoInput({ addTodo, todo, setTodo }: ITodo) {
+function TodoInput({ addTodo }: ITodo) {
+  const [todo, setTodo] = useState("");
+
+  const handleClick = () => {
+    addTodo(todo);
+    setTodo("");
+  };
   return (
     <form>
       <div className="relative flex w-full flex-wrap items-stretch mb-3">
@@ -22,7 +27,7 @@ function TodoInput({ addTodo, todo, setTodo }: ITodo) {
           type="button"
           data-testid="todo-button"
           className="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1"
-          onClick={() => addTodo(todo)}
+          onClick={handleClick}
         >
           <FaPlusCircle />
         </button>

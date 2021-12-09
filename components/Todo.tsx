@@ -6,7 +6,6 @@ import TodoItem from "./TodoItem";
 
 function Todo() {
   const { state, dispatch } = useTodo();
-  const [todo, setTodo] = useState("");
 
   const addTodo = (todoItem: string) => {
     const newTodoItem: TodoItemType = {
@@ -15,7 +14,6 @@ function Todo() {
       done: false,
     };
     dispatch({ type: ActionType.ADD_TODO, payload: newTodoItem });
-    setTodo("");
   };
 
   const toggleTodo = (done: boolean, id: string) => {
@@ -30,7 +28,7 @@ function Todo() {
   return (
     <>
       <section className="container mx-auto max-w-screen-md">
-        <TodoInput addTodo={addTodo} todo={todo} setTodo={setTodo} />
+        <TodoInput addTodo={addTodo} />
       </section>
       <section className="container mx-auto max-w-screen-md mt-4">
         <div>
